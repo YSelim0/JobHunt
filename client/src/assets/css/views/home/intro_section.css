@@ -1,0 +1,42 @@
+.intro-section {
+    height: 350px;
+    background-image: url("../../../images/intro-bg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.intro-section .title {
+    color: #FFFFFF;
+    font-size: 65px;
+    font-weight: 700;
+}
+
+.intro-section input, .intro-section .intro-dropdown {
+    width: 380px;
+    margin-right: 20px;
+}
+
+.intro-dropdown {
+    color: var(--input-placeholder);
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-menu {
+    width: calc(100% - 20px);
+}
+
+.intro-section .btn-search {
+    width: 80px;
+    height: 60px;
+    background-color: #FFFFFF;
+    font-size: 20px;
+    border-radius: 4px;
+}

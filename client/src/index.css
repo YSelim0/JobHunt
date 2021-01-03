@@ -1,5 +1,6 @@
 :root {
     --main-blue: #4A93FF;
+    --input-placeholder: #939393;
     --background: #FDFDFD;
 }
 
@@ -12,12 +13,33 @@ body {
     background-color: var(--background) !important;
 }
 
-input, button, input:focus, button:focus, button:active {
+.main-container {
+    width: 100%;
+    padding: 0 122px;
+}
+
+button {
+    border: none;
+}
+
+::placeholder {
+    color: var(--input-placeholder);
+}
+
+input, input:focus, button:focus, button:active {
     outline: none !important;
     border: none !important;
 }
 
-.main-container {
-    width: 100%;
-    padding: 0 122px;
+input[type="text"], .intro-dropdown {
+    height: 60px;
+    background-color: var(--background);
+    border-radius: 4px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
 }
