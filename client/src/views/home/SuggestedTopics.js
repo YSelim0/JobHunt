@@ -16,32 +16,32 @@ class SuggestedTopics extends React.Component {
                 <div className="topics">
                     <div className="col-3 topic">
                         <span>Javascript</span>
-                        <img src={javascriptLogo} alt="Javascript"></img>
+                        <img className="topic-img" src={javascriptLogo} alt="Javascript"></img>
                     </div>
                     
                     <div className="col-3 offset-1 topic">
                         <span>Android</span>
-                        <img src={androidLogo} alt="Android"></img>
+                        <img className="topic-img" src={androidLogo} alt="Android"></img>
                     </div>
                     
                     <div className="col-3 offset-1 topic">
                         <span>React</span>
-                        <img src={reactLogo} alt="React"></img>
+                        <img className="topic-img" src={reactLogo} alt="React"></img>
                     </div>
 
                     <div className="col-3 topic">
                         <span>Php</span>
-                        <img src={phpLogo} alt="Php"></img>
+                        <img className="topic-img" src={phpLogo} alt="Php"></img>
                     </div>
 
                     <div className="col-3 offset-1 topic">
                         <span>Vue</span>
-                        <img src={vueLogo} alt="Vue"></img>
+                        <img className="topic-img" src={vueLogo} alt="Vue"></img>
                     </div>
 
                     <div className="col-3 offset-1 topic">
                         <span>C#</span>
-                        <img src={csharpLogo} alt="C#"></img>
+                        <img className="topic-img" src={csharpLogo} alt="C#"></img>
                     </div>
                 </div>
             </div>
