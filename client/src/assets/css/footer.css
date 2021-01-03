@@ -1,0 +1,32 @@
+.footer {
+    background-color: var(--main-dark);
+    border-top: 5px solid var(--main-blue);
+    color: #FFFFFF;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.left-side {
+    height: 118px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer ul {
+    padding: 0px;
+}
+
+.footer li {
+    list-style: none;
+    text-align: left;
+    line-height: 30px;
+}
+
+.footer ul h5 {
+    font-weight: 600;
+}
+
+.footer li a {
+    color: #FFFFFF;
+}
