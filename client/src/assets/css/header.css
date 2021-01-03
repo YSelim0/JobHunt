@@ -1,0 +1,27 @@
+.header {
+    height: 92px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -1 4 0 rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.logo span {
+    color: var(--main-blue);
+}
+
+.btn-post {
+    height: 50px;
+    background-color: var(--main-blue);
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0 44px;
+}

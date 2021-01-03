@@ -1,0 +1,23 @@
+:root {
+    --main-blue: #4A93FF;
+    --background: #FDFDFD;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: var(--background) !important;
+}
+
+input, button, input:focus, button:focus, button:active {
+    outline: none !important;
+    border: none !important;
+}
+
+.main-container {
+    width: 100%;
+    padding: 0 122px;
+}
