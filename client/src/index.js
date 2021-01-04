@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./views/home/Home";
+import PostJob from "./views/post-job/PostJob";
 
 import "./index.css";
 import 'jquery';
@@ -12,7 +14,12 @@ import '@fortawesome/fontawesome-free/js/all.js';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Home />
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={Home}></Route>
+                <Route path="/post-job" component={PostJob}></Route>
+            </Switch>
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById("root")
 );

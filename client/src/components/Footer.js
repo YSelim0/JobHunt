@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../assets/css/footer.css";
 
 class Footer extends React.Component {
@@ -7,7 +8,7 @@ class Footer extends React.Component {
             <div className="container-fluid footer pl-0 pr-0">
                 <div className="main-container d-flex justify-content-between">
                     <div className="col-auto left-side pl-0">
-                        <h1 className="logo"><span>{"{"}</span> JobHunt <span>{"}"}</span></h1>
+                        <Link to="/" className="logo"><span>{"{"}</span> JobHunt <span>{"}"}</span></Link>
                         <span>@ {new Date().getFullYear()} JobHunt. All rights reserved.</span>
                     </div>
 
