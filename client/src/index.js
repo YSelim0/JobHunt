@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./views/home/Home";
 import PostJob from "./views/post-job/PostJob";
+import Search from "./views/search/Search";
 
 import "./index.css";
 import 'jquery';
@@ -18,6 +19,7 @@ ReactDOM.render(
             <Switch>
                 <Route exact path="/" component={Home}></Route>
                 <Route path="/post-job" component={PostJob}></Route>
+                <Route path="/search" component={Search}></Route>
             </Switch>
         </BrowserRouter>
     </React.StrictMode>,
