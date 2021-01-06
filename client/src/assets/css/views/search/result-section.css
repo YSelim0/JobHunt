@@ -1,0 +1,20 @@
+.result-section {
+    background-color: #F6F6F6;
+    padding: 55px 120px;
+}
+
+.result-section .title {
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.result-section .keyword {
+    color: var(--main-blue);
+}
+
+.result-section .description {
+    color: #272727;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 15px;
+}
