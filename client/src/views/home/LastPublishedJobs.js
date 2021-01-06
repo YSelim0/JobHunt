@@ -5,7 +5,7 @@ import jobs from "../../jobs";
 
 class LastPublishedJobs extends React.Component {
     render() {
-        const posts = jobs.map(job => <JobTile job={job} />);
+        const posts = jobs.map(job => <JobTile job={job} key={job.companyName} />);
 
         return (
             <div className="container mt-5 mb-5">

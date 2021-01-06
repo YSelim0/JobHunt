@@ -8,7 +8,7 @@ class JobTile extends React.Component {
 
     render() {
         const { job } = this.props;
-        const tags = job.tags?.map(tag => <span className="tag">{tag}</span>);
+        const tags = job.tags?.map(tag => <span className="tag" key={tag}>{tag}</span>);
 
         const jobTypes = {
             1: ["full-time", "Full Time"],
@@ -18,7 +18,7 @@ class JobTile extends React.Component {
 
         return (
             <div className="post mt-2">
-                <div className="col-1">
+                <div className="col-auto">
                     <img className="post-img" src={job.logo} alt="Logo"></img>
                 </div>
 
