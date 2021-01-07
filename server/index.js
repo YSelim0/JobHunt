@@ -1,9 +1,8 @@
 const app = require("express")();
-const body_parser = require("body-parser");
-const cors = require("cors");
 const http = require("http").createServer(app);
+const loaders = require("./loaders/index");
+const config = require("./config/index");
 
-app.use(cors());
-app.use(body_parser.json());
+loaders({ expressApp: app });
 
-app.listen(3001);
+app.listen(config.port);
