@@ -6,3 +6,5 @@ const config = require("./config/index");
 loaders({ expressApp: app });
 
 app.listen(config.port);
+
+module.exports = app;

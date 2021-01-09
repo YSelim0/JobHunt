@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha 'tests/**/*.test.ts'",
+    "test": "cross-env TEST=true mocha 'tests/**/*.test.js'",
     "start": "concurrently \"nodemon index.js\" \"cd ../client/ && npm run serve\"",
     "serve": "nodemon index.js"
   },
@@ -22,7 +22,10 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "cross-env": "^7.0.3",
+    "faker": "^5.1.0",
     "mocha": "^8.2.1",
+    "mongodb-memory-server-core": "^6.9.2",
     "supertest": "^6.0.1"
   }
 }

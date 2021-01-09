@@ -1,7 +1,7 @@
 const Post = require("../../models/Post");
 
 class PostService {
-    createPost(post) {
+    static createPost(post) {
         return new Promise((resolve, reject) => {
             Post.create(post)
                 .then(post => {
