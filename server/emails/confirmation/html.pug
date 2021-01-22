@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+
+        link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap' rel='stylesheet')
+
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+
+        style
+            include ../css/style.css
+
+    body
+        div.container-fluid
+            div.alert.alert-primary.mt-2 If you haven't done any action on the JobHunt app recently, ignore this email.
+
+            div.wrapper
+                div.w-100.center
+                    a.logo
+                        span {
+                        |  JobHunt 
+                        span }
+
+                h4.mt-4 Confirmation Email
+                
+                p
+                    | To publish your post titled 
+                    span.txt-bold "#{postTitle}"
+                    | , you must confirm this email.
+
+                div.w-100.center
+                    a(href=`${confirmationURL}`).btn-confirm.mt-2 Confirm
+
+            div.w-600.footer
+                p This e-mail was sent as a result of an action you performed in the JobHunt app.
+                p &copy; #{new Date().getFullYear()} JobHunt

@@ -57,6 +57,11 @@ const postSchema = new Schema({
             type: String,
             required: true
         }
+    },
+    status: {
+        type: Number,
+        required: true,
+        default: 1
     }
 }, {
     versionKey: false

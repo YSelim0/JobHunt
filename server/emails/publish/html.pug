@@ -1,0 +1,73 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+
+        link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap' rel='stylesheet')
+
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+
+        style
+            include ../css/style.css
+
+    body
+        div.container-fluid
+            div.wrapper
+                div.w-100.center
+                    a.logo
+                        span {
+                        |  JobHunt 
+                        span }
+                        
+                - var index = 0;
+                - var jobTypes = ["Full Time", "Part Time", "Remote"];
+
+                - console.log(" --- " + JSON.stringify(post));
+
+                each val, key in post
+                    - index = 0;
+                    div.w-100.center.mt-4
+                        .card.text-center
+                            .card-header
+                                | #{key.toUpperCase()}
+                            .card-body.center
+                                .card
+                                    ul(style="display:table; margin: 0 auto; width:100%").list-group.list-group-flush
+                                        each val in post[key]
+                                            - var keyName = Object.keys(post[key])[index];
+                                            
+                                            case keyName
+                                                when "website"
+                                                    li.list-group-item #{keyName}: 
+                                                        a(href=`http://${val}`, target="_blank") #{val}
+
+                                                when "url"
+                                                    li.list-group-item #{keyName}: 
+                                                        a(href=`http://${val}`, target="_blank") #{val}
+
+                                                when "linkedinURL"
+                                                    li.list-group-item #{keyName}: 
+                                                        a(href=`http://${val}`, target="_blank") #{val}
+
+                                                when "twitterUsername"
+                                                    li.list-group-item #{keyName}: 
+                                                        a(href=`https://www.twitter.com/${val}`, target="_blank") #{val}
+
+                                                when "logoURL"
+                                                    li.list-group-item #{keyName}: 
+                                                        a(href=`${val}`, target="_blank") See logo
+
+                                                when "type"
+                                                    li.list-group-item #{keyName}: #{jobTypes[val - 1]}
+
+                                                default
+                                                    li.list-group-item #{keyName}: #{val}
+
+                                            - index++;
+
+                div.w-100.center.mt-2
+                    a(href=`${publishURL}`).btn-confirm.mt-2 Publish
+
+            div.w-600.footer
+                p This e-mail was sent as a result of an action you performed in the JobHunt app.
+                p &copy; #{new Date().getFullYear()} JobHunt
