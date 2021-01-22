@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env TEST=true mocha 'tests/**/*.test.js'",
+    "test": "cross-env TEST=true mocha --timeout 15000 --exit 'tests/**/*.test.js'",
     "start": "concurrently \"nodemon index.js\" \"cd ../client/ && npm run serve\"",
     "serve": "nodemon index.js"
   },

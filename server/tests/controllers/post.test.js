@@ -1,4 +1,3 @@
-const mocha = require("mocha");
 const request = require("supertest");
 const JobPostFaker = require("../helpers/jobPostFaker");
 const app = require("../../index");
