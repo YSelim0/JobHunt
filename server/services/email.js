@@ -1,4 +1,4 @@
-const config = require("../../config/index");
+const config = require("../config/index");
 const Email = require("email-templates");
 
 class EmailService {
@@ -16,12 +16,8 @@ class EmailService {
         });
     }
 
-    sendEmail(options) {
-        return new Promise((resolve, reject) => {
-            this.emailer.send(options)
-                .then(payload => resolve(payload))
-                .catch(error => reject(error));
-        });
+    async sendEmail(options) {
+        return await this.emailer.send(options);
     }
 }
 

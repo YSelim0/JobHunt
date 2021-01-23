@@ -1,7 +1,7 @@
 const config = require("../../config/index");
 
 class ApiRoutes {
-    static baseURL = config.serverURL;
+    static baseURL = `http://localhost:${config.port}`;
 
     static postCreateURL = "/post/create/";
 

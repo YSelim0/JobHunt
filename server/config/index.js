@@ -7,6 +7,5 @@ module.exports = {
     email: process.env.EMAIL,
     password: process.env.PASSWORD,
     secretKey: process.env.SECRET_KEY,
-    mailTokenLife: process.env.MAIL_TOKEN_LIFE || "7d",
-    serverURL: process.env.SERVER_URL
+    mailTokenLife: process.env.MAIL_TOKEN_LIFE || "7d"
 }
