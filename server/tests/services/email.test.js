@@ -55,6 +55,6 @@ describe("Email Service", () => {
             ...options
         };
 
-        return await (await sendEmail(emailOptions)).to.be.not.rejected;
+        return (await sendEmail(emailOptions)).to.be.not.rejected;
     });
 });
