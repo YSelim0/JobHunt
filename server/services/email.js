@@ -5,7 +5,7 @@ class EmailService {
     constructor() {
         this.emailer = new Email({
             preview: false,
-            send: true,
+            send: config.node_env == "DEV",
             transport: {
                 service: "gmail",
                 auth: {
