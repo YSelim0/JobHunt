@@ -6,4 +6,4 @@ module.exports = ({ expressApp }) => {
     expressLoader(expressApp);
     controllerLoader(expressApp);
     mongooseLoader();
-}
+};

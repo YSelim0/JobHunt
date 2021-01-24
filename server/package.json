@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env TEST=true mocha --timeout 15000 --exit 'tests/**/*.test.js'",
+    "test": "cross-env NODE_ENV=TEST mocha --timeout 15000 --exit 'tests/**/*.test.js'",
     "start": "concurrently \"nodemon index.js\" \"cd ../client/ && npm run serve\"",
     "serve": "nodemon index.js"
   },
@@ -19,14 +19,21 @@
     "email-templates": "^8.0.3",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
+    "helmet": "^4.4.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.10",
     "nodemon": "^2.0.7",
     "pug": "^3.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
     "cross-env": "^7.0.3",
+    "eslint": "^7.18.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
     "faker": "^5.1.0",
     "mocha": "^8.2.1",
     "mongodb-memory-server-core": "^6.9.3",

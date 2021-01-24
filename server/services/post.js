@@ -6,7 +6,7 @@ class PostService {
     }
 
     static async confirmPost(postId, isPublic) {
-        let post = await Post.findById(postId);
+        const post = await Post.findById(postId);
 
         await Post.updateOne({ _id: postId }, {
             status: isPublic && post.status != 3 ? 2 : 3

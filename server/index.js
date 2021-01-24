@@ -8,9 +8,9 @@ loaders({ expressApp: app });
 app.use((err, req, res, next) => {
     res.status(400).json({
         error: err.message
-    })
+    });
 });
 
-app.listen(config.port);
+http.listen(config.port);
 
 module.exports = app;

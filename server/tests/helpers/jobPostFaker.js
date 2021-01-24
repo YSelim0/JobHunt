@@ -22,7 +22,7 @@ class JobPostFaker {
                 url: faker.internet.url(),
                 email: faker.internet.email()
             }
-        }
+        };
         return post;
     }
 }

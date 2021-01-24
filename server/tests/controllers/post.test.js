@@ -6,7 +6,7 @@ const ApiRoutes = require("../../api/helpers/apiRoutes");
 describe("Post Controller", async () => {
     it("Should create a new job post", done => {
         // Arrange
-        let fakePost = JobPostFaker.createFakeJobPost();
+        const fakePost = JobPostFaker.createFakeJobPost();
 
         // Act & Assert
         request(app)
@@ -17,7 +17,7 @@ describe("Post Controller", async () => {
 
     it("Should return validation error", done => {
         // Arrange
-        let fakePost = JobPostFaker.createFakeJobPost();
+        const fakePost = JobPostFaker.createFakeJobPost();
 
         // Act
         delete fakePost.company.name;

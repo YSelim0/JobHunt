@@ -10,11 +10,11 @@ const ash = require("express-async-handler");
 const emailService = new EmailService();
 
 app.use(ApiRoutes.confirmationURL, verifyToken, ash(async (req, res) => {
-    let { payload } = req;
-    let post = await (await PostService.confirmPost(payload.postId, true)).toJSON();
-    let publishURL = ApiRoutes.baseURL + ApiRoutes.publihPostURL + "?token=" + jwt.sign({ postId: post._id }, config.secretKey, { expiresIn: config.mailTokenLife });
+    const { payload } = req;
+    const post = (await PostService.confirmPost(payload.postId, true)).toJSON();
+    const publishURL = ApiRoutes.baseURL + ApiRoutes.publihPostURL + "?token=" + jwt.sign({ postId: post._id }, config.secretKey, { expiresIn: config.mailTokenLife });
 
-    let { company, job, contact } = post;
+    const { company, job, contact } = post;
 
     const options = {
         template: "publish",
@@ -37,7 +37,7 @@ app.use(ApiRoutes.confirmationURL, verifyToken, ash(async (req, res) => {
 }));
 
 app.use(ApiRoutes.publihPostURL, verifyToken, ash(async (req, res) => {
-    let { payload } = req;
+    const { payload } = req;
 
     await PostService.confirmPost(payload.postId, false);
 

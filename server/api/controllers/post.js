@@ -9,16 +9,16 @@ const ash = require("express-async-handler");
 const emailService = new EmailService();
 
 app.use(ApiRoutes.postCreateURL, ash(async (req, res) => {
-    let { post } = req.body;
-    let createdPost = await PostService.createPost(post);
-    let confirmationURL = ApiRoutes.baseURL + ApiRoutes.confirmationURL + "?token=" + jwt.sign({ postId: createdPost._id }, config.secretKey, { expiresIn: config.mailTokenLife });
-    
+    const { post } = req.body;
+    const createdPost = await PostService.createPost(post);
+    const confirmationURL = ApiRoutes.baseURL + ApiRoutes.confirmationURL + "?token=" + jwt.sign({ postId: createdPost._id }, config.secretKey, { expiresIn: config.mailTokenLife });
+
     const options = {
         template: "confirmation",
         message: {
             from: `JobHunt <${config.email}>`,
             to: post.contact.email,
-            subject: "Confirmation Email",
+            subject: "Confirmation Email"
         },
         locals: {
             postTitle: createdPost.job.position,
