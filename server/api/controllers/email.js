@@ -11,7 +11,7 @@ const emailService = new EmailService();
 
 app.use(ApiRoutes.confirmationURL, verifyToken, ash(async (req, res) => {
     const { payload } = req;
-    const post = (await PostService.confirmPost(payload.postId, true)).toJSON();
+    const post = await PostService.confirmPost(payload.postId, true);
     const publishURL = ApiRoutes.baseURL + ApiRoutes.publihPostURL + "?token=" + jwt.sign({ postId: post._id }, config.secretKey, { expiresIn: config.mailTokenLife });
 
     const { company, job, contact } = post;

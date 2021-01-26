@@ -12,7 +12,7 @@ class PostService {
             status: isPublic && post.status != 3 ? 2 : 3
         });
 
-        return await Post.findById(postId);
+        return (await Post.findById(postId)).toJSON();
     }
 }
 

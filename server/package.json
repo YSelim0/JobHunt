@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cross-env NODE_ENV=TEST mocha --timeout 15000 --exit 'tests/**/*.test.js'",
-    "start": "concurrently \"nodemon index.js\" \"cd ../client/ && npm run serve\"",
+    "start": "concurrently \"npm run serve\" \"cd ../client/ && npm run serve\"",
     "serve": "nodemon index.js"
   },
   "keywords": [],
