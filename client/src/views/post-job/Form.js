@@ -61,12 +61,12 @@ class Form extends React.Component {
         let { value, innerText } = e.target;
 
         this.state[parent][key] = key != "tags" ? value || innerText : value.split(",");
-        this.setState(this.state);
+        this.setState(state => state);
     }
     
     async submitForm() {
         this.state.job.description = this.quill.root.innerHTML;
-        this.setState(this.state);
+        this.setState(state => state);
 
         await PostService.createPost(this.state)
             .then(() => swal({
@@ -82,13 +82,9 @@ class Form extends React.Component {
     }
     
     listCountryItems() {
-        let countries = [];
-        
-        countryList.getNames().forEach(countryName => {
-            let item = <a className="dropdown-item" onClick={e => this.handleChanges(e, "job", "location")}>{countryName}</a>
-            countries.push(item);
+        return countryList.getNames().map(countryName => {
+            return <a className="dropdown-item" onClick={e => this.handleChanges(e, "job", "location")}>{countryName}</a>
         });
-        return countries;
     }
  
     render() {

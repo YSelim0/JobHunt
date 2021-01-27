@@ -14,6 +14,11 @@ class PostService {
 
         return (await Post.findById(postId)).toJSON();
     }
+
+    static async getPost(limit = null, status = 3) {
+        const posts = await Post.find().where("status").equals(status);
+        return limit ? posts.slice(0, limit) : posts;
+    }
 }
 
 module.exports = PostService;

@@ -64,7 +64,11 @@ const postSchema = new Schema({
         default: 1
     }
 }, {
-    versionKey: false
+    versionKey: false,
+    timestamps: {
+        createdAt: "creationDate",
+        updatedAt: false
+    }
 });
 
 module.exports = mongoose.model("Post", postSchema);

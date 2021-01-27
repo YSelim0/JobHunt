@@ -33,4 +33,15 @@ app.use(ApiRoutes.postCreateURL, ash(async (req, res) => {
     });
 }));
 
+app.use(ApiRoutes.getPostURL, ash(async (req, res) => {
+    const limit = req.body.limit;
+    const status = req.body.status;
+
+    const posts = await PostService.getPost(limit, status);
+
+    res.status(200).json({
+        posts
+    });
+}));
+
 module.exports = app;

@@ -1,11 +1,24 @@
 import React from "react";
 import JobTile from "../../components/JobTile";
 import "../../assets/css/views/home/last_published_jobs.css";
-import jobs from "../../jobs";
+import PostService from "../../services/post";
 
 class LastPublishedJobs extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            posts: []
+        };
+    }
+
+    async componentDidMount() {
+        const result = await PostService.getPost(10);
+        this.setState(async state => state.posts = result.data.posts);
+    }
+
     render() {
-        const posts = jobs.map(job => <JobTile job={job} key={job.companyName} />);
+        const posts = this.state.posts.map(post => <JobTile post={post} key={post._id} />);
 
         return (
             <div className="container mt-5 mb-5">
