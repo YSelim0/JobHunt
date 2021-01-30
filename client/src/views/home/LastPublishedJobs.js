@@ -1,42 +1,31 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import JobTile from "../../components/JobTile";
 import "../../assets/css/views/home/last_published_jobs.css";
 import PostService from "../../services/post";
+import { Link } from "react-router-dom";
 
-class LastPublishedJobs extends React.Component {
-    constructor() {
-        super();
+export default () => {
+    const [posts, setPosts] = useState(null);
 
-        this.state = {
-            posts: []
-        };
-    }
-
-    async componentDidMount() {
+    useEffect(async () => {
         const result = await PostService.getPost(10);
-        this.setState(async state => state.posts = result.data.posts);
-    }
+        setPosts(result.posts.map(post => <JobTile post={post} key={post._id} />));
+    }, []);
 
-    render() {
-        const posts = this.state.posts.map(post => <JobTile post={post} key={post._id} />);
-
-        return (
-            <div className="container mt-5 mb-5">
-                <div className="top-section">
-                    <h4 className="title">Last published jobs</h4>
-                    <button className="btn-see-all">See All</button>
-                </div>
-
-                <div className="row posts mt-1">
-                    {posts}
-                </div>
-
-                <div className="row justify-content-center">
-                    <button className="btn-see-all mt-4">See All</button>
-                </div>
+    return (
+        <div className="container mt-5 mb-5">
+            <div className="top-section">
+                <h4 className="title">Last published jobs</h4>
+                <Link to="search" className="btn-see-all">See All</Link>
             </div>
-        )
-    }
-}
 
-export default LastPublishedJobs;
+            <div className="row posts mt-1">
+                {posts}
+            </div>
+
+            <div className="row justify-content-center">
+                <button className="btn-see-all mt-4">See All</button>
+            </div>
+        </div>
+    )
+}

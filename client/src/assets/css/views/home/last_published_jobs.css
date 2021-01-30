@@ -21,4 +21,11 @@
     font-size: 16px;
     font-weight: 600;
     padding: 0 44px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-see-all:hover {
+    color: #FFFFFF;
+    text-decoration: none; 
 }

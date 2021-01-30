@@ -8,6 +8,8 @@ class ApiRoutes {
 
     static confirmationURL = "/email/confirmation/";
     static publihPostURL = "/email/publish/";
+
+    static searchURL = "/search/";
 }
 
 module.exports = ApiRoutes;

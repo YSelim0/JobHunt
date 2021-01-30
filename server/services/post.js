@@ -16,7 +16,7 @@ class PostService {
     }
 
     static async getPost(limit = null, status = 3) {
-        const posts = await Post.find().where("status").equals(status);
+        const posts = await (await Post.find().where("status").equals(status)).reverse();
         return limit ? posts.slice(0, limit) : posts;
     }
 }

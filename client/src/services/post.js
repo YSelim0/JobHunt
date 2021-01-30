@@ -2,11 +2,13 @@ const { ApiService, ApiRoutes, RequestType } = require("../helpers/common");
 
 class PostService {
     static async createPost(post) {
-        return await ApiService.sendRequest(RequestType.POST, ApiRoutes.createPost, { post });
+        const result = await ApiService.sendRequest(RequestType.POST, ApiRoutes.createPostURL, { post });
+        return result.data;
     }
     
     static async getPost(limit = null) {
-        return await ApiService.sendRequest(RequestType.POST, ApiRoutes.getPost, { limit });
+        const result = await ApiService.sendRequest(RequestType.POST, ApiRoutes.getPostURL, { limit });
+        return result.data;
     }
 }
 

@@ -19,7 +19,7 @@ ReactDOM.render(
             <Switch>
                 <Route exact path="/" component={Home}></Route>
                 <Route path="/post-job" component={PostJob}></Route>
-                <Route path="/search" component={Search}></Route>
+                <Route path="/search" render={(props) => <Search {...props} />}></Route>
             </Switch>
         </BrowserRouter>
     </React.StrictMode>,

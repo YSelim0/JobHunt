@@ -14,8 +14,10 @@ class ApiService {
 class ApiRoutes {
     static baseURL = "http://localhost:3001/";
     
-    static createPost = this.baseURL + "post/create";
-    static getPost = this.baseURL + "post/get";
+    static createPostURL = this.baseURL + "post/create";
+    static getPostURL = this.baseURL + "post/get";
+
+    static searchURL = this.baseURL + "search";
 }
 
 const RequestType = {
